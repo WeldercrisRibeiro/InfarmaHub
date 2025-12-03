@@ -2,13 +2,14 @@
 
 export const listaDocumentos = [
   // --- GERAL ---
-  // {
-  //     id: 'geral_01',
-  //     categoria: 'Geral',
-  //     titulo: 'Perguntas Frequentes',
-  //     arquivo: 'faq.md', // Arquivo na raiz do docs
-  //     descricao: 'Dúvidas comuns.'
-  // }
+  //  {
+  //      id: 'geral_01',
+  //      categoria: 'Geral',
+  //      titulo: 'Perguntas Frequentes',
+  //      arquivo: 'faq.html', // Arquivo na raiz do docs
+  //      pasta: "faq",
+  //      arquivo: "faq/faq.html",
+  //  },
   // --- DOCS VERSÃO ---
 
   //25.02

@@ -90,7 +90,7 @@
         
         // SÓ TI/WELDER PODE ENTRAR
         document.addEventListener('DOMContentLoaded', () => {
-            verificarPermissao(['ti']); 
+            verificarPermissao(['master', 'admin']); 
             
             const footerEl = document.getElementById("versionFooter");
             if (footerEl) footerEl.innerHTML = `© ${new Date().getFullYear()} Weldercris Ribeiro. Versão ${APP_VERSION}`;

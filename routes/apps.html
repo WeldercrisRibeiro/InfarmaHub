@@ -1,141 +1,289 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Infarma HUB - Apps</title>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-    <link rel="shortcut icon" type="image/png" href="https://www.infarma.com.br/wp-content/themes/infarmasitev2/assets/img/2023/favicon_white.png" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="shortcut icon"
+      type="image/png"
+      href="https://www.infarma.com.br/wp-content/themes/infarmasitev2/assets/img/2023/favicon_white.png"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
     <script src="https://cdn.tailwindcss.com"></script>
 
     <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: { inter: ['Inter', 'sans-serif'] },
-                    colors: { primary: '#003973', infarmaBlue: '#003973' }
-                }
-            }
-        }
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: { inter: ["Inter", "sans-serif"] },
+            colors: { primary: "#003973", infarmaBlue: "#003973" },
+          },
+        },
+      };
     </script>
 
     <style>
-        body { background-image: linear-gradient(to bottom right, #0f345c, #0096b1, #0f345c); }
-        .app-btn { transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1); }
-        .app-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(0, 57, 115, 0.1);
-            border-color: #003973;
-            background-color: #f8fafc;
-        }
-        .app-btn:active { transform: translateY(0); }
+      body {
+        background-image: linear-gradient(
+          to bottom right,
+          #0f345c,
+          #0096b1,
+          #0f345c
+        );
+      }
+      .app-btn {
+        transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      .app-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(0, 57, 115, 0.1);
+        border-color: #003973;
+        background-color: #f8fafc;
+      }
+      .app-btn:active {
+        transform: translateY(0);
+      }
     </style>
-</head>
+  </head>
 
-<body class="min-h-screen flex items-center justify-center font-inter p-4">
-
+  <body class="min-h-screen flex items-center justify-center font-inter p-4">
     <div class="bg-white p-8 md:p-10 rounded-2xl shadow-2xl w-full max-w-3xl">
-        
-        <div class="flex items-center justify-between mb-8 border-b border-gray-100 pb-6">
-            <div class="flex items-center">
-                <img src="https://www.infarma.com.br/wp-content/themes/infarmasitev2/assets/img/2023/favicon.png" alt="Logo Infarma" class="w-12 h-12 mr-4" />
-                <div>
-                    <h2 class="text-2xl font-bold text-gray-800 tracking-tight">Infarma HUB</h2>
-                    <p class="text-xs text-gray-500 font-medium uppercase">Apps & Utilitários</p>
-                </div>
-            </div>
-            
-            <a href="menu.html" class="flex items-center text-gray-500 hover:text-primary transition-colors font-semibold bg-gray-50 hover:bg-gray-100 px-4 py-2 rounded-lg text-sm">
-                <i class="fa-solid fa-arrow-left mr-2"></i> Voltar
-            </a>
+      <div
+        class="flex items-center justify-between mb-8 border-b border-gray-100 pb-6"
+      >
+        <div class="flex items-center">
+          <img
+            src="https://www.infarma.com.br/wp-content/themes/infarmasitev2/assets/img/2023/favicon.png"
+            alt="Logo Infarma"
+            class="w-12 h-12 mr-4"
+          />
+          <div>
+            <h2 class="text-2xl font-bold text-gray-800 tracking-tight">
+              Infarma HUB
+            </h2>
+            <p class="text-xs text-gray-500 font-medium uppercase">
+              Apps & Utilitários
+            </p>
+          </div>
         </div>
 
-        <div class="text-center">
-            <h1 class="text-lg font-bold text-gray-700 mb-8 flex items-center justify-center gap-2">
-               <i class="fa-solid fa-link text-primary"></i> Selecione o recurso para abrir:
-            </h1>
+        <a
+          href="menu.html"
+          class="flex items-center text-gray-500 hover:text-primary transition-colors font-semibold bg-gray-50 hover:bg-gray-100 px-4 py-2 rounded-lg text-sm"
+        >
+          <i class="fa-solid fa-arrow-left mr-2"></i> Voltar
+        </a>
+      </div>
 
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-                <button id="btn-sql" class="app-btn p-4 border border-gray-200 rounded-xl flex flex-col items-center justify-center gap-2 group">
-                    <i class="fa-solid fa-database text-2xl text-gray-400 group-hover:text-primary transition-colors"></i>
-                    <span class="font-bold text-sm text-gray-600 group-hover:text-gray-800">SQL 2019</span>
-                </button>
-                <button id="btn-schemas" class="app-btn p-4 border border-gray-200 rounded-xl flex flex-col items-center justify-center gap-2 group">
-                    <i class="fa-solid fa-file-code text-2xl text-gray-400 group-hover:text-primary transition-colors"></i>
-                    <span class="font-bold text-sm text-gray-600 group-hover:text-gray-800">SCHEMAS</span>
-                </button>
-                <button id="btn-drivers" class="app-btn p-4 border border-gray-200 rounded-xl flex flex-col items-center justify-center gap-2 group">
-                    <i class="fa-solid fa-print text-2xl text-gray-400 group-hover:text-primary transition-colors"></i>
-                    <span class="font-bold text-sm text-gray-600 group-hover:text-gray-800">DRIVERS</span>
-                </button>
-                <button id="btn-apihub" class="app-btn p-4 border border-gray-200 rounded-xl flex flex-col items-center justify-center gap-2 group">
-                    <i class="fa-solid fa-server text-2xl text-gray-400 group-hover:text-primary transition-colors"></i>
-                    <span class="font-bold text-sm text-gray-600 group-hover:text-gray-800">APIHUB</span>
-                    <span class="text-xs text-gray-400 mt-1">Versão 25.03</span>
-                </button>
-                <button id="btn-ped" class="app-btn p-4 border border-gray-200 rounded-xl flex flex-col items-center justify-center gap-2 group">
-                    <i class="fa-solid fa-desktop text-2xl text-gray-400 group-hover:text-primary transition-colors"></i>
-                    <span class="font-bold text-sm text-gray-600 group-hover:text-gray-800">PAINEL DE PEDIDOS</span>
-                    <span class="text-xs text-gray-400 mt-1">Versão 25.03</span>
-                </button>
-                <button id="btn-instalador" class="app-btn p-4 border border-gray-200 rounded-xl flex flex-col items-center justify-center gap-2 group">
-                    <i class="fa-solid fa-compact-disc text-2xl text-gray-400 group-hover:text-primary transition-colors"></i>
-                    <span class="font-bold text-sm text-gray-600 group-hover:text-gray-800">INSTALADOR</span>
-                    <span class="text-xs text-gray-400 mt-1">Versão 25.12</span>
-                </button>
-            </div>
+      <div class="text-center">
+        <h1
+          class="text-lg font-bold text-gray-700 mb-8 flex items-center justify-center gap-2"
+        >
+          <i class="fa-solid fa-link text-primary"></i> Selecione o recurso para
+          abrir:
+        </h1>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+          <button
+            id="btn-sql"
+            class="app-btn p-4 border border-gray-200 rounded-xl flex flex-col items-center justify-center gap-2 group"
+          >
+            <i
+              class="fa-solid fa-database text-2xl text-gray-400 group-hover:text-primary transition-colors"
+            ></i>
+            <span
+              class="font-bold text-sm text-gray-600 group-hover:text-gray-800"
+              >SQL 2019</span
+            >
+          </button>
+          <button
+            id="btn-schemas"
+            class="app-btn p-4 border border-gray-200 rounded-xl flex flex-col items-center justify-center gap-2 group"
+          >
+            <i
+              class="fa-solid fa-file-code text-2xl text-gray-400 group-hover:text-primary transition-colors"
+            ></i>
+            <span
+              class="font-bold text-sm text-gray-600 group-hover:text-gray-800"
+              >SCHEMAS</span
+            >
+          </button>
+          <button
+            id="btn-drivers"
+            class="app-btn p-4 border border-gray-200 rounded-xl flex flex-col items-center justify-center gap-2 group"
+          >
+            <i
+              class="fa-solid fa-print text-2xl text-gray-400 group-hover:text-primary transition-colors"
+            ></i>
+            <span
+              class="font-bold text-sm text-gray-600 group-hover:text-gray-800"
+              >DRIVERS</span
+            >
+          </button>
+          <button
+            id="btn-apihub"
+            class="app-btn p-4 border border-gray-200 rounded-xl flex flex-col items-center justify-center gap-2 group"
+          >
+            <i
+              class="fa-solid fa-server text-2xl text-gray-400 group-hover:text-primary transition-colors"
+            ></i>
+            <span
+              class="font-bold text-sm text-gray-600 group-hover:text-gray-800"
+              >APIHUB</span
+            >
+            <span class="text-xs text-gray-400 mt-1">Versão 25.03</span>
+          </button>
+          <button
+            id="btn-ped"
+            class="app-btn p-4 border border-gray-200 rounded-xl flex flex-col items-center justify-center gap-2 group"
+          >
+            <i
+              class="fa-solid fa-desktop text-2xl text-gray-400 group-hover:text-primary transition-colors"
+            ></i>
+            <span
+              class="font-bold text-sm text-gray-600 group-hover:text-gray-800"
+              >PAINEL DE PEDIDOS</span
+            >
+            <span class="text-xs text-gray-400 mt-1">Versão 25.03</span>
+          </button>
+          <button
+            id="btn-instalador"
+            class="app-btn p-4 border border-gray-200 rounded-xl flex flex-col items-center justify-center gap-2 group"
+          >
+            <i
+              class="fa-solid fa-compact-disc text-2xl text-gray-400 group-hover:text-primary transition-colors"
+            ></i>
+            <span
+              class="font-bold text-sm text-gray-600 group-hover:text-gray-800"
+              >INSTALADOR</span
+            >
+            <span class="text-xs text-gray-400 mt-1">Versão 25.12</span>
+          </button>
+
+          <button
+            id="btn-utilitarios"
+            class="app-btn p-4 border border-gray-200 rounded-xl flex flex-col items-center justify-center gap-2 group"
+          >
+            <!-- SVG custom icon for APPS ÚTEIS -->
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              width="28"
+              height="28"
+              class="text-gray-400 group-hover:text-primary transition-colors"
+            >
+              <defs>
+                <linearGradient id="g" x1="0" x2="1">
+                  <stop offset="0%" stop-color="#6b7280" stop-opacity="1" />
+                  <stop offset="100%" stop-color="#003973" stop-opacity="1" />
+                </linearGradient>
+              </defs>
+              <rect
+                x="2"
+                y="4"
+                width="20"
+                height="16"
+                rx="3"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.4"
+                opacity="0.25"
+              ></rect>
+              <g
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M7 8h10" />
+                <path d="M7 12h10" />
+                <path d="M7 16h10" />
+              </g>
+              <circle
+                cx="18"
+                cy="7"
+                r="2.2"
+                fill="currentColor"
+                opacity="0.12"
+              ></circle>
+            </svg>
+            <span
+              class="font-bold text-sm text-gray-600 group-hover:text-gray-800"
+              >APPS ÚTEIS</span
+            >
+            <span class="text-xs text-gray-400 mt-1"
+              >Notepad++, Lightshot, Ajusta Hora, Bats, Ícones</span
+            >
+          </button>
         </div>
-        
-        <footer class="text-xs text-gray-400 mt-8 text-center border-t border-gray-100 pt-6">
-            <p id="versionFooter">Carregando versão...</p>
-        </footer>
+      </div>
 
+      <footer
+        class="text-xs text-gray-400 mt-8 text-center border-t border-gray-100 pt-6"
+      >
+        <p id="versionFooter">Carregando versão...</p>
+      </footer>
     </div>
 
     <script type="module">
-        import { APP_VERSION } from "../assets/js/config.js";
+      import { APP_VERSION } from "../assets/js/config.js";
 
-        // 1. Verificação de Login
-        if (sessionStorage.getItem("loggedIn") !== "true") {
-            window.location.href = "../index.html";
+      // 1. Verificação de Login
+      if (sessionStorage.getItem("loggedIn") !== "true") {
+        window.location.href = "../index.html";
+      }
+
+      // 2. Links
+      const links = {
+        "btn-sql":
+          "https://mega.nz/file/2nxlmDKB#mcsNzYS7ggqKbN54gHmdcy47O5FGLlr7UoPmHR7Bvhk",
+        "btn-schemas":
+          "https://mega.nz/file/mjYXBIjR#-1_CTchCGf2D2EBAgunNC51sNHzBZxVn-_wnI3-voLw",
+        "btn-drivers": "https://mega.nz/folder/SvRlkajT#xBTIhCUMrL6Ffg3WnFSuWw",
+        "btn-apihub":
+          "https://github.com/WeldercrisRibeiro/instalador-apihub/releases/download/25.03/Instalador.ApiHub.Varejo.25.03.1.1.exe",
+        "btn-ped":
+          "https://github.com/WeldercrisRibeiro/InfarmaHub/releases/download/painel.25.3.1/Infarma.Painel.de.Pedidos-Windows-25.3.2-Setup.exe",
+        "btn-instalador":
+          "https://mega.nz/file/Gzx3RRqK#ib5p6z1CoYHZyqqJja9_VOoOen11Qt1NsqrAWsuMR6o",
+      };
+
+      // Função global para abrir link
+      function openLink(linkId) {
+        const url = links[linkId];
+        if (url && url !== "#" && url.startsWith("http")) {
+          window.open(url, "_blank");
+        } else {
+          alert("Recurso indisponível no momento.");
         }
+      }
 
-        // 2. Links
-        const links = {
-            'btn-sql': 'https://mega.nz/file/2nxlmDKB#mcsNzYS7ggqKbN54gHmdcy47O5FGLlr7UoPmHR7Bvhk',
-            'btn-schemas': 'https://mega.nz/file/mjYXBIjR#-1_CTchCGf2D2EBAgunNC51sNHzBZxVn-_wnI3-voLw',
-            'btn-drivers': 'https://mega.nz/folder/SvRlkajT#xBTIhCUMrL6Ffg3WnFSuWw',
-            'btn-apihub': 'https://github.com/WeldercrisRibeiro/instalador-apihub/releases/download/25.03/Instalador.ApiHub.Varejo.25.03.1.1.exe',
-            'btn-ped': 'https://github.com/WeldercrisRibeiro/InfarmaHub/releases/download/painel.25.3.1/Infarma.Painel.de.Pedidos-Windows-25.3.2-Setup.exe',
-            'btn-instalador': 'https://mega.nz/file/Gzx3RRqK#ib5p6z1CoYHZyqqJja9_VOoOen11Qt1NsqrAWsuMR6o' 
-        };
-
-        // Função global para abrir link
-        function openLink(linkId) {
-            const url = links[linkId];
-            if (url && url !== '#' && url.startsWith('http')) { 
-                window.open(url, '_blank'); 
-            } else {
-                alert('Recurso indisponível no momento.');
-            }
-        }
-
-        document.addEventListener('DOMContentLoaded', () => {
-            // Inicializa Botões
-            Object.keys(links).forEach(id => {
-                const button = document.getElementById(id);
-                if (button) button.addEventListener('click', () => openLink(id));
-            });
-
-            // 3. Atualiza Versão no Rodapé
-            const footerEl = document.getElementById("versionFooter");
-            if (footerEl) {
-                const ano = new Date().getFullYear();
-                footerEl.innerHTML = `© ${ano} Weldercris Ribeiro. Versão ${APP_VERSION || "..."}`;
-            }
+      document.addEventListener("DOMContentLoaded", () => {
+        // Inicializa Botões
+        Object.keys(links).forEach((id) => {
+          const button = document.getElementById(id);
+          if (button) button.addEventListener("click", () => openLink(id));
         });
+
+        // 3. Atualiza Versão no Rodapé
+        const footerEl = document.getElementById("versionFooter");
+        if (footerEl) {
+          const ano = new Date().getFullYear();
+          footerEl.innerHTML = `© ${ano} Weldercris Ribeiro. Versão ${
+            APP_VERSION || "..."
+          }`;
+        }
+      });
     </script>
-</body>
+  </body>
 </html>
