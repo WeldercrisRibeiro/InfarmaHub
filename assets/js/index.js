@@ -69,7 +69,7 @@ async function entrar() {
           {
             usuario: matchedUser.usuario,
             acao: "LOGIN",
-            detalhes: "Acesso realizado via Web",
+            detalhes: "Acesso realizado",
           },
         ]);
       } catch (logErr) {

@@ -5,9 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Menu - Infarma HUB</title>
 
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-    <link rel="shortcut icon" type="image/png" href="https://www.infarma.com.br/wp-content/themes/infarmasitev2/assets/img/2023/favicon_white.png" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="shortcut icon"
+      type="image/png"
+      href="https://www.infarma.com.br/wp-content/themes/infarmasitev2/assets/img/2023/favicon_white.png"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
 
     <script src="https://cdn.tailwindcss.com"></script>
 
@@ -30,7 +40,12 @@
 
     <style>
       body {
-        background-image: linear-gradient(to bottom right, #0f345c, #0096b1, #0f345c);
+        background-image: linear-gradient(
+          to bottom right,
+          #0f345c,
+          #0096b1,
+          #0f345c
+        );
       }
       .menu-btn {
         transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -47,156 +62,285 @@
   </head>
 
   <body class="flex items-center justify-center p-4 min-h-screen font-inter">
-    <div class="bg-white p-8 md:p-12 rounded-2xl shadow-2xl w-full max-w-5xl relative overflow-hidden">
-      
-      <div class="flex flex-col md:flex-row items-center justify-between border-b border-gray-100 pb-6 mb-10 gap-4">
+    <div
+      class="bg-white p-8 md:p-12 rounded-2xl shadow-2xl w-full max-w-5xl relative overflow-hidden"
+    >
+      <div
+        class="flex flex-col md:flex-row items-center justify-between border-b border-gray-100 pb-6 mb-10 gap-4"
+      >
         <div class="flex items-center self-start md:self-auto">
-          <img src="https://www.infarma.com.br/wp-content/themes/infarmasitev2/assets/img/2023/favicon.png" alt="Logo Infarma" class="w-12 h-12 mr-4" />
+          <img
+            src="https://www.infarma.com.br/wp-content/themes/infarmasitev2/assets/img/2023/favicon.png"
+            alt="Logo Infarma"
+            class="w-12 h-12 mr-4"
+          />
           <div>
-              <h2 class="text-2xl font-bold text-gray-800 tracking-tight leading-tight">Infarma HUB</h2>
-              <p class="text-xs text-gray-500 font-medium uppercase tracking-wider">Painel de Controle</p>
+            <h2
+              class="text-2xl font-bold text-gray-800 tracking-tight leading-tight"
+            >
+              Infarma HUB
+            </h2>
+            <p
+              class="text-xs text-gray-500 font-medium uppercase tracking-wider"
+            >
+              Painel de Controle
+            </p>
           </div>
         </div>
 
         <div class="bg-blue-50 px-4 py-2 rounded-full border border-blue-100">
           <span class="text-sm text-gray-600 font-medium">
-            Olá, <span id="userNameDisplay" class="text-primary font-bold">Usuário</span>
+            Olá,
+            <span id="userNameDisplay" class="text-primary font-bold"
+              >Usuário</span
+            >
           </span>
         </div>
       </div>
 
       <div class="text-center">
-        <h1 class="text-xl md:text-2xl font-bold text-gray-800 mb-2">O que você deseja fazer hoje?</h1>
-        <p class="text-gray-500 mb-10 text-sm">Selecione um módulo abaixo para continuar</p>
+        <h1 class="text-xl md:text-2xl font-bold text-gray-800 mb-2">
+          O que você deseja fazer hoje?
+        </h1>
+        <p class="text-gray-500 mb-10 text-sm">
+          Selecione um módulo abaixo para continuar
+        </p>
 
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-          
-          <button onclick="navegarPara('main.html')" class="menu-btn group flex flex-col items-center justify-center p-8 bg-gray-50 border border-gray-200 rounded-xl h-full">
-            <div class="w-16 h-16 bg-white rounded-full shadow-sm flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-                <i class="fa-solid fa-cloud-arrow-down text-2xl text-primary"></i>
+          <button
+            onclick="navegarPara('main.html')"
+            class="menu-btn group flex flex-col items-center justify-center p-8 bg-gray-50 border border-gray-200 rounded-xl h-full"
+            data-allowed-roles="suporte,implantacao,admin"
+          >
+            <div
+              class="w-16 h-16 bg-white rounded-full shadow-sm flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300"
+            >
+              <i class="fa-solid fa-cloud-arrow-down text-2xl text-primary"></i>
             </div>
-            <span class="text-lg font-bold text-gray-700 group-hover:text-primary transition-colors">Baixar Versões</span>
-            <span class="text-xs text-gray-400 mt-2">Downloads Versões Licença</span>
+            <span
+              class="text-lg font-bold text-gray-700 group-hover:text-primary transition-colors"
+              >Baixar Versões</span
+            >
+            <span class="text-xs text-gray-400 mt-2"
+              >Downloads Versões Licença</span
+            >
           </button>
 
-          <button onclick="navegarPara('sync.html')" class="menu-btn group flex flex-col items-center justify-center p-8 bg-gray-50 border border-gray-200 rounded-xl h-full">
-            <div class="w-16 h-16 bg-white rounded-full shadow-sm flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-                <i class="fa-solid fa-rotate text-2xl text-green-600"></i>
+          <button
+            onclick="navegarPara('sync.html')"
+            class="menu-btn group flex flex-col items-center justify-center p-8 bg-gray-50 border border-gray-200 rounded-xl h-full"
+            data-allowed-roles="suporte,implantacao,admin"
+          >
+            <div
+              class="w-16 h-16 bg-white rounded-full shadow-sm flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300"
+            >
+              <i class="fa-solid fa-rotate text-2xl text-green-600"></i>
             </div>
-            <span class="text-lg font-bold text-gray-700 group-hover:text-green-700 transition-colors">Infarma Sync</span>
-            <span class="text-xs text-gray-400 mt-2">Download Versões Sync</span>
+            <span
+              class="text-lg font-bold text-gray-700 group-hover:text-green-700 transition-colors"
+              >Infarma Sync</span
+            >
+            <span class="text-xs text-gray-400 mt-2"
+              >Download Versões Sync</span
+            >
           </button>
 
-          <button onclick="navegarPara('cadastros.html')" class="menu-btn group flex flex-col items-center justify-center p-8 bg-gray-50 border border-gray-200 rounded-xl h-full">
-            <div class="w-16 h-16 bg-white rounded-full shadow-sm flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-                <i class="fa-solid fa-users text-2xl text-primary"></i>
+          <button
+            onclick="navegarPara('cadastros.html')"
+            class="menu-btn group flex flex-col items-center justify-center p-8 bg-gray-50 border border-gray-200 rounded-xl h-full"
+            data-allowed-roles="admin"
+          >
+            <div
+              class="w-16 h-16 bg-white rounded-full shadow-sm flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300"
+            >
+              <i class="fa-solid fa-users text-2xl text-primary"></i>
             </div>
-            <span class="text-lg font-bold text-gray-700 group-hover:text-primary transition-colors">Clientes</span>
+            <span
+              class="text-lg font-bold text-gray-700 group-hover:text-primary transition-colors"
+              >Clientes</span
+            >
             <span class="text-xs text-gray-400 mt-2">Gerenciar Cadastros</span>
           </button>
 
-          <button onclick="navegarPara('apps.html')" class="menu-btn group flex flex-col items-center justify-center p-8 bg-gray-50 border border-gray-200 rounded-xl h-full">
-            <div class="w-16 h-16 bg-white rounded-full shadow-sm flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-                <i class="fa-solid fa-rocket text-2xl text-primary"></i>
+          <button
+            onclick="navegarPara('apps.html')"
+            class="menu-btn group flex flex-col items-center justify-center p-8 bg-gray-50 border border-gray-200 rounded-xl h-full"
+            data-allowed-roles="admin,implantacao,suporte"
+          >
+            <div
+              class="w-16 h-16 bg-white rounded-full shadow-sm flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300"
+            >
+              <i class="fa-solid fa-rocket text-2xl text-primary"></i>
             </div>
-            <span class="text-lg font-bold text-gray-700 group-hover:text-primary transition-colors">Apps & Links</span>
-            <span class="text-xs text-gray-400 mt-2">Ferramentas Rápidas</span>
+            <span
+              class="text-lg font-bold text-gray-700 group-hover:text-primary transition-colors"
+              >Apps & Links</span
+            >
+            <span class="text-xs text-gray-400 mt-2">Arquivos utilitários</span>
           </button>
 
-          <button onclick="navegarPara('docs.html')" class="menu-btn group flex flex-col items-center justify-center p-8 bg-gray-50 border border-gray-200 rounded-xl h-full">
-            <div class="w-16 h-16 bg-white rounded-full shadow-sm flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-                <i class="fa-solid fa-book-open text-2xl text-primary"></i>
+          <!-- <button
+            onclick="navegarPara('implantacao.html')"
+            class="menu-btn group flex flex-col items-center justify-center p-8 bg-gray-50 border border-gray-200 rounded-xl h-full"
+            data-allowed-roles="implantacao"
+          >
+            <div
+              class="w-16 h-16 bg-white rounded-full shadow-sm flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300"
+            >
+              <i class="fa-solid fa-rocket text-2xl text-primary"></i>
             </div>
-            <span class="text-lg font-bold text-gray-700 group-hover:text-primary transition-colors">Documentação</span>
+            <span
+              class="text-lg font-bold text-gray-700 group-hover:text-primary transition-colors"
+              >Implantação</span
+            >
+            <span class="text-xs text-gray-400 mt-2"
+              >Ferramentas Rápidas para implantação</span
+            >
+          </button> -->
+
+          <button
+            onclick="navegarPara('docs.html')"
+            class="menu-btn group flex flex-col items-center justify-center p-8 bg-gray-50 border border-gray-200 rounded-xl h-full"
+            data-allowed-roles="suporte,implantacao,admin"
+          >
+            <div
+              class="w-16 h-16 bg-white rounded-full shadow-sm flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300"
+            >
+              <i class="fa-solid fa-book-open text-2xl text-primary"></i>
+            </div>
+            <span
+              class="text-lg font-bold text-gray-700 group-hover:text-primary transition-colors"
+              >Documentação</span
+            >
             <span class="text-xs text-gray-400 mt-2">Manuais Infarma</span>
           </button>
-          
-          <button onclick="navegarPara('conteudos.html')" class="menu-btn group flex flex-col items-center justify-center p-8 bg-gray-50 border border-gray-200 rounded-xl h-full">
-            <div class="w-16 h-16 bg-white rounded-full shadow-sm flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-                <i class="fa-solid fa-graduation-cap text-2xl text-orange-500"></i>
-            </div>
-            <span class="text-lg font-bold text-gray-700 group-hover:text-orange-600 transition-colors">Infarma Conteúdos</span>
-            <span class="text-xs text-gray-400 mt-2">Vídeos e Treinamentos</span>
-          </button>
-          
-          <!-- <a href="URL_DO_SEU_CANAL_YOUTUBE" target="_blank" class="menu-btn group flex flex-col items-center justify-center p-8 bg-gray-50 border border-gray-200 rounded-xl h-full">
-            <div class="w-16 h-16 bg-white rounded-full shadow-sm flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-                <i class="fa-brands fa-youtube text-2xl text-red-600"></i>
-            </div>
-            <span class="text-lg font-bold text-gray-700 group-hover:text-red-700 transition-colors">Nosso Canal</span>
-            <span class="text-xs text-gray-400 mt-2">Tutoriais e Novidades em Vídeo</span>
-          </a> -->
 
-          <button onclick="navegarPara('usuarios.html')" class="menu-btn group flex flex-col items-center justify-center p-8 bg-gray-50 border border-gray-200 rounded-xl h-full" data-allowed-roles="admin">
-            <div class="w-16 h-16 bg-white rounded-full shadow-sm flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-                <i class="fa-solid fa-gear text-2xl text-gray-600 group-hover:text-primary"></i>
+          <button
+            onclick="navegarPara('conteudos.html')"
+            class="menu-btn group flex flex-col items-center justify-center p-8 bg-gray-50 border border-gray-200 rounded-xl h-full"
+            data-allowed-roles="suporte,implantacao,admin"
+          >
+            <div
+              class="w-16 h-16 bg-white rounded-full shadow-sm flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300"
+            >
+              <i
+                class="fa-solid fa-graduation-cap text-2xl text-orange-500"
+              ></i>
             </div>
-            <span class="text-lg font-bold text-gray-700 group-hover:text-primary transition-colors">Configurações</span>
-            <span class="text-xs text-gray-400 mt-2">Usuários e Permissões</span>
+            <span
+              class="text-lg font-bold text-gray-700 group-hover:text-orange-600 transition-colors"
+              >Infarma Conteúdos</span
+            >
+            <span class="text-xs text-gray-400 mt-2"
+              >Vídeos e Treinamentos</span
+            >
           </button>
 
-          <button onclick="navegarPara('auditoria.html')" class="menu-btn group flex flex-col items-center justify-center p-8 bg-gray-50 border border-gray-200 rounded-xl h-full" data-allowed-roles="admin">
-            <div class="w-16 h-16 bg-white rounded-full shadow-sm flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-                <i class="fa-solid fa-shield-halved text-2xl text-gray-600 group-hover:text-primary"></i>
+          <button
+            onclick="navegarPara('usuarios.html')"
+            class="menu-btn group flex flex-col items-center justify-center p-8 bg-gray-50 border border-gray-200 rounded-xl h-full"
+            data-allowed-roles="admin"
+          >
+            <div
+              class="w-16 h-16 bg-white rounded-full shadow-sm flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300"
+            >
+              <i class="fa-solid fa-user-gear text-2xl text-primary"></i>
             </div>
-            <span class="text-lg font-bold text-gray-700 group-hover:text-primary transition-colors">Auditoria</span>
+            <span
+              class="text-lg font-bold text-gray-700 group-hover:text-primary transition-colors"
+              >Usuários</span
+            >
+            <span class="text-xs text-gray-400 mt-2"
+              >Usuários e Permissões</span
+            >
+          </button>
+
+          <button
+            onclick="navegarPara('auditoria.html')"
+            class="menu-btn group flex flex-col items-center justify-center p-8 bg-gray-50 border border-gray-200 rounded-xl h-full"
+            data-allowed-roles="admin"
+          >
+            <div
+              class="w-16 h-16 bg-white rounded-full shadow-sm flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300"
+            >
+              <i class="fa-solid fa-shield-halved text-2xl text-primary"></i>
+            </div>
+            <span
+              class="text-lg font-bold text-gray-700 group-hover:text-primary transition-colors"
+              >Auditoria</span
+            >
             <span class="text-xs text-gray-400 mt-2">Logs do Sistema</span>
           </button>
 
-          <button onclick="navegarPara('faq.html')" class="menu-btn group flex flex-col items-center justify-center p-8 bg-gray-50 border border-gray-200 rounded-xl h-full" data-allowed-roles="admin">
-            <div class="w-16 h-16 bg-white rounded-full shadow-sm flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-                <i class="fa-solid fa-gear text-2xl text-gray-600 group-hover:text-primary"></i>
+          <button
+            onclick="navegarPara('faq.html')"
+            class="menu-btn group flex flex-col items-center justify-center p-8 bg-gray-50 border border-gray-200 rounded-xl h-full"
+            data-allowed-roles="suporte,admin,implantacao"
+          >
+            <div
+              class="w-16 h-16 bg-white rounded-full shadow-sm flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300"
+            >
+              <i class="fa-solid fa-circle-question text-2xl text-primary"></i>
             </div>
-            <span class="">Perguntas e Respostas</span>
+            <span
+              class="text-lg font-bold text-gray-700 group-hover:text-primary transition-colors"
+              >Perguntas e Respostas</span
+            >
             <span class="text-xs text-gray-400 mt-2">FAQ</span>
           </button>
-          
         </div>
 
-        <button onclick="sair()" class="bg-white border-2 border-red-100 text-red-500 hover:bg-red-50 hover:border-red-200 hover:text-red-700 font-bold py-3 px-10 rounded-xl transition-all duration-200 flex items-center mx-auto gap-2">
-            <i class="fa-solid fa-right-from-bracket"></i> Sair do Sistema
+        <button
+          onclick="sair()"
+          class="bg-white border-2 border-red-100 text-red-500 hover:bg-red-50 hover:border-red-200 hover:text-red-700 font-bold py-3 px-10 rounded-xl transition-all duration-200 flex items-center mx-auto gap-2"
+        >
+          <i class="fa-solid fa-right-from-bracket"></i> Sair do Sistema
         </button>
       </div>
 
-      <footer class="text-xs text-gray-400 mt-12 text-center border-t border-gray-100 pt-6">
+      <footer
+        class="text-xs text-gray-400 mt-12 text-center border-t border-gray-100 pt-6"
+      >
         <p id="versionFooter">© 2025 Weldercris Ribeiro.</p>
       </footer>
     </div>
 
     <script type="module">
-        import { APP_VERSION } from "../assets/js/config.js";
-        // Importante: importar o controle de permissão para esconder o botão de config
-        import { configurarInterface } from "../assets/js/auth.js"; 
+      import { APP_VERSION } from "../assets/js/config.js";
+      // Importante: importar o controle de permissão para esconder o botão de config
+      import { configurarInterface } from "../assets/js/auth.js";
 
-        window.navegarPara = (url) => window.location.href = url;
-        window.sair = () => {
-            sessionStorage.clear();
-            window.location.href = "../index.html";
-        };
+      window.navegarPara = (url) => (window.location.href = url);
+      window.sair = () => {
+        sessionStorage.clear();
+        window.location.href = "../index.html";
+      };
 
-        document.addEventListener("DOMContentLoaded", () => {
-            if (sessionStorage.getItem("loggedIn") !== "true") {
-                window.location.href = "../index.html";
-                return;
-            }
+      document.addEventListener("DOMContentLoaded", () => {
+        if (sessionStorage.getItem("loggedIn") !== "true") {
+          window.location.href = "../index.html";
+          return;
+        }
 
-            // Exibir Nome
-            const username = sessionStorage.getItem("username");
-            const displayEl = document.getElementById("userNameDisplay");
-            if (displayEl && username) {
-                displayEl.textContent = username.replace(/['"]+/g, "");
-            }
+        // Exibir Nome
+        const username = sessionStorage.getItem("username");
+        const displayEl = document.getElementById("userNameDisplay");
+        if (displayEl && username) {
+          displayEl.textContent = username.replace(/['"]+/g, "");
+        }
 
-            // Atualizar Versão
-            const footerEl = document.getElementById("versionFooter");
-            if (footerEl) {
-                const ano = new Date().getFullYear();
-                footerEl.innerHTML = `© ${ano} Weldercris Ribeiro. Versão ${APP_VERSION || "..."}`;
-            }
+        // Atualizar Versão
+        const footerEl = document.getElementById("versionFooter");
+        if (footerEl) {
+          const ano = new Date().getFullYear();
+          footerEl.innerHTML = `© ${ano} Weldercris Ribeiro. Versão ${
+            APP_VERSION || "..."
+          }`;
+        }
 
-            // Aplicar Permissões (Esconder botão Config)
-            configurarInterface();
-        });
+        // Aplicar Permissões (Esconder botão Config)
+        configurarInterface();
+      });
     </script>
   </body>
 </html>
