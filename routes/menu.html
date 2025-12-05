@@ -63,7 +63,7 @@
 
   <body class="flex items-center justify-center p-4 min-h-screen font-inter">
     <div
-      class="bg-white p-8 md:p-12 rounded-2xl shadow-2xl w-full max-w-5xl relative overflow-hidden"
+      class="bg-white p-6 md:p-8 rounded-2xl shadow-2xl w-full max-w-5xl relative overflow-hidden"
     >
       <div
         class="flex flex-col md:flex-row items-center justify-between border-b border-gray-100 pb-6 mb-10 gap-4"
@@ -106,19 +106,19 @@
           Selecione um módulo abaixo para continuar
         </p>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-10">
           <button
             onclick="navegarPara('main.html')"
-            class="menu-btn group flex flex-col items-center justify-center p-8 bg-gray-50 border border-gray-200 rounded-xl h-full"
+            class="menu-btn group flex flex-col items-center justify-center p-6 bg-gray-50 border border-gray-200 rounded-xl h-full"
             data-allowed-roles="suporte,implantacao,admin"
           >
             <div
-              class="w-16 h-16 bg-white rounded-full shadow-sm flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300"
+              class="w-12 h-12 bg-white rounded-full shadow-sm flex items-center justify-center mb-3 group-hover:scale-110 transition-transform duration-300"
             >
-              <i class="fa-solid fa-cloud-arrow-down text-2xl text-primary"></i>
+              <i class="fa-solid fa-cloud-arrow-down text-xl text-primary"></i>
             </div>
             <span
-              class="text-lg font-bold text-gray-700 group-hover:text-primary transition-colors"
+              class="text-base font-bold text-gray-700 group-hover:text-primary transition-colors"
               >Baixar Versões</span
             >
             <span class="text-xs text-gray-400 mt-2"
@@ -128,16 +128,16 @@
 
           <button
             onclick="navegarPara('sync.html')"
-            class="menu-btn group flex flex-col items-center justify-center p-8 bg-gray-50 border border-gray-200 rounded-xl h-full"
+            class="menu-btn group flex flex-col items-center justify-center p-6 bg-gray-50 border border-gray-200 rounded-xl h-full"
             data-allowed-roles="suporte,implantacao,admin"
           >
             <div
-              class="w-16 h-16 bg-white rounded-full shadow-sm flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300"
+              class="w-12 h-12 bg-white rounded-full shadow-sm flex items-center justify-center mb-3 group-hover:scale-110 transition-transform duration-300"
             >
-              <i class="fa-solid fa-rotate text-2xl text-green-600"></i>
+              <i class="fa-solid fa-rotate text-xl text-green-600"></i>
             </div>
             <span
-              class="text-lg font-bold text-gray-700 group-hover:text-green-700 transition-colors"
+              class="text-base font-bold text-gray-700 group-hover:text-green-700 transition-colors"
               >Infarma Sync</span
             >
             <span class="text-xs text-gray-400 mt-2"
@@ -147,16 +147,16 @@
 
           <button
             onclick="navegarPara('cadastros.html')"
-            class="menu-btn group flex flex-col items-center justify-center p-8 bg-gray-50 border border-gray-200 rounded-xl h-full"
+            class="menu-btn group flex flex-col items-center justify-center p-6 bg-gray-50 border border-gray-200 rounded-xl h-full"
             data-allowed-roles="admin"
           >
             <div
-              class="w-16 h-16 bg-white rounded-full shadow-sm flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300"
+              class="w-12 h-12 bg-white rounded-full shadow-sm flex items-center justify-center mb-3 group-hover:scale-110 transition-transform duration-300"
             >
-              <i class="fa-solid fa-users text-2xl text-primary"></i>
+              <i class="fa-solid fa-users text-xl text-primary"></i>
             </div>
             <span
-              class="text-lg font-bold text-gray-700 group-hover:text-primary transition-colors"
+              class="text-base font-bold text-gray-700 group-hover:text-primary transition-colors"
               >Clientes</span
             >
             <span class="text-xs text-gray-400 mt-2">Gerenciar Cadastros</span>
@@ -164,16 +164,16 @@
 
           <button
             onclick="navegarPara('apps.html')"
-            class="menu-btn group flex flex-col items-center justify-center p-8 bg-gray-50 border border-gray-200 rounded-xl h-full"
+            class="menu-btn group flex flex-col items-center justify-center p-6 bg-gray-50 border border-gray-200 rounded-xl h-full"
             data-allowed-roles="admin,implantacao,suporte"
           >
             <div
-              class="w-16 h-16 bg-white rounded-full shadow-sm flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300"
+              class="w-12 h-12 bg-white rounded-full shadow-sm flex items-center justify-center mb-3 group-hover:scale-110 transition-transform duration-300"
             >
-              <i class="fa-solid fa-rocket text-2xl text-primary"></i>
+              <i class="fa-solid fa-rocket text-xl text-primary"></i>
             </div>
             <span
-              class="text-lg font-bold text-gray-700 group-hover:text-primary transition-colors"
+              class="text-base font-bold text-gray-700 group-hover:text-primary transition-colors"
               >Apps & Links</span
             >
             <span class="text-xs text-gray-400 mt-2">Arquivos utilitários</span>
@@ -200,16 +200,16 @@
 
           <button
             onclick="navegarPara('docs.html')"
-            class="menu-btn group flex flex-col items-center justify-center p-8 bg-gray-50 border border-gray-200 rounded-xl h-full"
+            class="menu-btn group flex flex-col items-center justify-center p-6 bg-gray-50 border border-gray-200 rounded-xl h-full"
             data-allowed-roles="suporte,implantacao,admin"
           >
             <div
-              class="w-16 h-16 bg-white rounded-full shadow-sm flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300"
+              class="w-12 h-12 bg-white rounded-full shadow-sm flex items-center justify-center mb-3 group-hover:scale-110 transition-transform duration-300"
             >
-              <i class="fa-solid fa-book-open text-2xl text-primary"></i>
+              <i class="fa-solid fa-book-open text-xl text-primary"></i>
             </div>
             <span
-              class="text-lg font-bold text-gray-700 group-hover:text-primary transition-colors"
+              class="text-base font-bold text-gray-700 group-hover:text-primary transition-colors"
               >Documentação</span
             >
             <span class="text-xs text-gray-400 mt-2">Manuais Infarma</span>
@@ -217,18 +217,16 @@
 
           <button
             onclick="navegarPara('conteudos.html')"
-            class="menu-btn group flex flex-col items-center justify-center p-8 bg-gray-50 border border-gray-200 rounded-xl h-full"
+            class="menu-btn group flex flex-col items-center justify-center p-6 bg-gray-50 border border-gray-200 rounded-xl h-full"
             data-allowed-roles="suporte,implantacao,admin"
           >
             <div
-              class="w-16 h-16 bg-white rounded-full shadow-sm flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300"
+              class="w-12 h-12 bg-white rounded-full shadow-sm flex items-center justify-center mb-3 group-hover:scale-110 transition-transform duration-300"
             >
-              <i
-                class="fa-solid fa-graduation-cap text-2xl text-orange-500"
-              ></i>
+              <i class="fa-solid fa-graduation-cap text-xl text-orange-500"></i>
             </div>
             <span
-              class="text-lg font-bold text-gray-700 group-hover:text-orange-600 transition-colors"
+              class="text-base font-bold text-gray-700 group-hover:text-orange-600 transition-colors"
               >Infarma Conteúdos</span
             >
             <span class="text-xs text-gray-400 mt-2"
@@ -238,16 +236,16 @@
 
           <button
             onclick="navegarPara('usuarios.html')"
-            class="menu-btn group flex flex-col items-center justify-center p-8 bg-gray-50 border border-gray-200 rounded-xl h-full"
+            class="menu-btn group flex flex-col items-center justify-center p-6 bg-gray-50 border border-gray-200 rounded-xl h-full"
             data-allowed-roles="admin"
           >
             <div
-              class="w-16 h-16 bg-white rounded-full shadow-sm flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300"
+              class="w-12 h-12 bg-white rounded-full shadow-sm flex items-center justify-center mb-3 group-hover:scale-110 transition-transform duration-300"
             >
-              <i class="fa-solid fa-user-gear text-2xl text-primary"></i>
+              <i class="fa-solid fa-user-gear text-xl text-primary"></i>
             </div>
             <span
-              class="text-lg font-bold text-gray-700 group-hover:text-primary transition-colors"
+              class="text-base font-bold text-gray-700 group-hover:text-primary transition-colors"
               >Usuários</span
             >
             <span class="text-xs text-gray-400 mt-2"
@@ -257,16 +255,16 @@
 
           <button
             onclick="navegarPara('auditoria.html')"
-            class="menu-btn group flex flex-col items-center justify-center p-8 bg-gray-50 border border-gray-200 rounded-xl h-full"
+            class="menu-btn group flex flex-col items-center justify-center p-6 bg-gray-50 border border-gray-200 rounded-xl h-full"
             data-allowed-roles="admin"
           >
             <div
-              class="w-16 h-16 bg-white rounded-full shadow-sm flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300"
+              class="w-12 h-12 bg-white rounded-full shadow-sm flex items-center justify-center mb-3 group-hover:scale-110 transition-transform duration-300"
             >
-              <i class="fa-solid fa-shield-halved text-2xl text-primary"></i>
+              <i class="fa-solid fa-shield-halved text-xl text-primary"></i>
             </div>
             <span
-              class="text-lg font-bold text-gray-700 group-hover:text-primary transition-colors"
+              class="text-base font-bold text-gray-700 group-hover:text-primary transition-colors"
               >Auditoria</span
             >
             <span class="text-xs text-gray-400 mt-2">Logs do Sistema</span>
@@ -274,16 +272,16 @@
 
           <button
             onclick="navegarPara('faq.html')"
-            class="menu-btn group flex flex-col items-center justify-center p-8 bg-gray-50 border border-gray-200 rounded-xl h-full"
+            class="menu-btn group flex flex-col items-center justify-center p-6 bg-gray-50 border border-gray-200 rounded-xl h-full"
             data-allowed-roles="suporte,admin,implantacao"
           >
             <div
-              class="w-16 h-16 bg-white rounded-full shadow-sm flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300"
+              class="w-12 h-12 bg-white rounded-full shadow-sm flex items-center justify-center mb-3 group-hover:scale-110 transition-transform duration-300"
             >
-              <i class="fa-solid fa-circle-question text-2xl text-primary"></i>
+              <i class="fa-solid fa-circle-question text-xl text-primary"></i>
             </div>
             <span
-              class="text-lg font-bold text-gray-700 group-hover:text-primary transition-colors"
+              class="text-base font-bold text-gray-700 group-hover:text-primary transition-colors"
               >Perguntas e Respostas</span
             >
             <span class="text-xs text-gray-400 mt-2">FAQ</span>

@@ -1,8 +1,6 @@
-// assets/js/index.js (VERSÃO ATUALIZADA COM AUDITORIA)
-
 import { SUPABASE_URL, SUPABASE_ANON_KEY, APP_VERSION } from "./config.js";
 
-// Inicializa o cliente Supabase
+
 const { createClient } = supabase;
 const supabaseClient = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 

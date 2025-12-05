@@ -2,10 +2,10 @@ import { versoesSync } from "./versoes.js";
 import { APP_VERSION } from "./config.js";
 
 // 1. Verificação de Segurança
-// if (sessionStorage.getItem("loggedIn") !== "true") {
+ if (sessionStorage.getItem("loggedIn") !== "true") {
 //   // Se não estiver logado, volta para a raiz
-//   window.location.href = "../index.html";
-// }
+  window.location.href = "../index.html";
+}
 
 // 2. Preencher o Datalist com as versões do Sync
 function preencherListaSync() {

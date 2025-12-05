@@ -20,7 +20,9 @@
     />
 
     <script src="https://cdn.tailwindcss.com"></script>
+
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
     <script>
       tailwind.config = {
         theme: {
@@ -36,7 +38,9 @@
         },
       };
     </script>
+
     <script>
+
       // Script para limpar URL
       if (window.location.pathname.includes("/routes/")) {
         const novaURL = window.location.href.replace("/routes", "");
@@ -132,10 +136,12 @@
       <footer
         class="text-xs text-gray-400 mt-8 text-center border-t border-gray-100 pt-6"
       >
-        <p id="versionFooter">Carregando versão...</p>
+        <p id="versionFooter"></p>
       </footer>
     </div>
 
-    <script type="module" src="assets/js/index.js"></script>
+    <script type="module" src="assets/js/login.js"></script>
+    <!-- vai tratar aqui o login.js como modulo ES , que é possível escrever códigos modulares (funcoes especificas que podem ser importadas novamnet)-->
+    
   </body>
 </html>

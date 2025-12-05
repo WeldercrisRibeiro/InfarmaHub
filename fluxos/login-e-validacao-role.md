@@ -83,7 +83,7 @@ const permissoesPorRole = {
 
 ## 2️⃣ Etapa 2: Validação de Credenciais
 
-**Arquivo**: `assets/js/index.js`
+**Arquivo**: `assets/js/login.js`
 
 ```javascript
 async function entrar() {
@@ -131,7 +131,7 @@ async function entrar() {
 
 ## 3️⃣ Etapa 3: Armazenar Dados na Sessão
 
-**Arquivo**: `assets/js/index.js`
+**Arquivo**: `assets/js/login.js`
 
 ```javascript
 if (matchedUser) {
@@ -372,7 +372,7 @@ export function configurarInterface() {
                            ▼
 ┌─────────────────────────────────────────────────────────────┐
 │              VALIDAÇÃO NO SUPABASE                          │
-│              (assets/js/index.js)                           │
+│              (assets/js/login.js)                           │
 │                                                             │
 │  SELECT usuario, nome_completo, role                       │
 │  FROM users                                                │
@@ -531,8 +531,8 @@ document.addEventListener("DOMContentLoaded", () => {
 | Etapa | Arquivo              | Ação                               |
 | ----- | -------------------- | ---------------------------------- |
 | 1     | `index.html`         | Usuário faz login                  |
-| 2     | `assets/js/index.js` | Valida credenciais no Supabase     |
-| 3     | `assets/js/index.js` | Armazena role em `sessionStorage`  |
+| 2     | `assets/js/login.js` | Valida credenciais no Supabase     |
+| 3     | `assets/js/login.js` | Armazena role em `sessionStorage`  |
 | 4     | `routes/menu.html`   | Carrega página do menu             |
 | 5     | `assets/js/auth.js`  | Valida permissões e esconde botões |
 | 6     | `routes/menu.html`   | Exibe menu com botões corretos     |

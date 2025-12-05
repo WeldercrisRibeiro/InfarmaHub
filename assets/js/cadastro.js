@@ -60,9 +60,6 @@ clientForm.addEventListener('submit', async (e) => {
         return;
     }
     
-    // --- CORREÇÃO AQUI ---
-    // O lado ESQUERDO deve ser o nome EXATO da coluna no Banco de Dados
-    // Se no seu banco for 'versao_servico', mude 'observacao' para 'versao_servico'
     const clientData = { 
         name: name, 
         cnpj: cnpj, 

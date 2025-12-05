@@ -1,12 +1,21 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Infarma Sync - Downloads</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-    <link rel="shortcut icon" href="https://www.infarma.com.br/wp-content/themes/infarmasitev2/assets/img/2023/favicon_white.png" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="shortcut icon"
+      href="https://www.infarma.com.br/wp-content/themes/infarmasitev2/assets/img/2023/favicon_white.png"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
@@ -18,49 +27,74 @@
         },
       };
     </script>
-</head>
+  </head>
 
-<body class="font-inter min-h-screen flex items-center justify-center px-4 py-12" style="background-image: linear-gradient(to bottom right, #003973, #008539);">
-
-    <div class="bg-white p-8 md:p-10 rounded-2xl shadow-2xl w-full max-w-lg text-center flex flex-col relative mt-8">
-
-        <div class="flex flex-col sm:flex-row items-center justify-between mb-8 border-b border-gray-100 pb-6 gap-4">
-            <div class="flex items-center">
-                <div class="bg-green-100 p-2 rounded-lg mr-3">
-                    <i class="fa-solid fa-rotate text-2xl text-primary"></i>
-                </div>
-                <div class="text-left">
-                    <h2 class="text-2xl font-bold text-gray-800 tracking-tight">Infarma Sync</h2>
-                    <p class="text-xs text-gray-500 font-medium uppercase">Atualizador Automático</p>
-                </div>
-            </div>
-
-            <a href="menu.html" class="flex items-center text-gray-500 hover:text-primary transition-colors font-semibold bg-gray-50 hover:bg-gray-100 px-4 py-2 rounded-lg text-sm">
-                <i class="fa-solid fa-arrow-left mr-2"></i> Voltar
-            </a>
-        </div>
-
-        <div class="text-left mb-6">
-            <label class="block text-sm font-semibold text-gray-700 mb-2">Versão do Sync</label>
-            <div class="relative">
-                <i class="fa-solid fa-tag absolute left-3 top-3.5 text-gray-400"></i>
-                <input list="versoesSync" id="versao" class="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all uppercase" placeholder="Ex: 9.31A" />
-                <datalist id="versoesSync"></datalist>
-            </div>
-            <p class="text-xs text-gray-400 mt-2">
-                <i class="fa-solid fa-circle-info"></i> O arquivo será baixado no formato .ZIP
+  <body
+    class="font-inter min-h-screen flex items-center justify-center px-4 py-12"
+    style="background-image: linear-gradient(to bottom right, #003973, #008539)"
+  >
+    <div
+      class="bg-white p-8 md:p-10 rounded-2xl shadow-2xl w-full max-w-lg text-center flex flex-col relative mt-8"
+    >
+      <div
+        class="flex flex-col sm:flex-row items-center justify-between mb-8 border-b border-gray-100 pb-6 gap-4"
+      >
+        <div class="flex items-center">
+          <div class="bg-green-100 p-2 rounded-lg mr-3">
+            <i class="fa-solid fa-rotate text-2xl text-primary"></i>
+          </div>
+          <div class="text-left">
+            <h2 class="text-2xl font-bold text-gray-800 tracking-tight">
+              Infarma Sync
+            </h2>
+            <p class="text-xs text-gray-500 font-medium uppercase">
+              Atualizador Automático
             </p>
+          </div>
         </div>
 
-        <button id="btnDownload" class="w-full bg-primary text-white px-6 py-4 rounded-lg hover:bg-green-700 transition-all font-bold shadow-md hover:shadow-lg flex items-center justify-center text-lg">
-            <i class="fa-solid fa-download mr-3"></i> Baixar Sync
-        </button>
+        <a
+          href="menu.html"
+          class="flex items-center text-gray-500 hover:text-primary transition-colors font-semibold bg-gray-50 hover:bg-gray-100 px-4 py-2 rounded-lg text-sm"
+        >
+          <i class="fa-solid fa-arrow-left mr-2"></i> Voltar
+        </a>
+      </div>
 
-        <footer class="text-xs text-gray-400 mt-8 text-center border-t border-gray-100 pt-4">
-            <p id="versionFooter">© 2025 Infarma.</p>
-        </footer>
+      <div class="text-left mb-6">
+        <label class="block text-sm font-semibold text-gray-700 mb-2"
+          >Versão do Sync</label
+        >
+        <div class="relative">
+          <i class="fa-solid fa-tag absolute left-3 top-3.5 text-gray-400"></i>
+          <input
+            list="versoesSync"
+            id="versao"
+            class="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all uppercase"
+            placeholder="Ex: 9.31A"
+          />
+          <datalist id="versoesSync"></datalist>
+        </div>
+        <p class="text-xs text-gray-400 mt-2">
+          <i class="fa-solid fa-circle-info"></i> O arquivo será baixado no
+          formato .ZIP
+        </p>
+      </div>
+
+      <button
+        id="btnDownload"
+        class="w-full bg-primary text-white px-6 py-4 rounded-lg hover:bg-green-700 transition-all font-bold shadow-md hover:shadow-lg flex items-center justify-center text-lg"
+      >
+        <i class="fa-solid fa-download mr-3"></i> Baixar Sync
+      </button>
+
+      <footer
+        class="text-xs text-gray-400 mt-8 text-center border-t border-gray-100 pt-4"
+      >
+        <p id="versionFooter">© 2025 Infarma.</p>
+      </footer>
     </div>
 
-    <script type="module" src="../assets/js/sync-script.js"></script>
-</body>
+    <script type="module" src="../assets/js/sync-main.js"></script>
+  </body>
 </html>

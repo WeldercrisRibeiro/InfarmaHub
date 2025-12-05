@@ -112,7 +112,7 @@ window.editarUser = async (id) => {
     inpNome.value = data.nome_completo || '';
     inpUser.value = data.usuario || '';
     inpPass.value = data.senha || '';
-    inpRole.value = data.role || 'operador';
+    inpRole.value = data.role || 'suporte';
 
     editId = id;
     abrirModal("Editar Usuário");
@@ -130,14 +130,11 @@ const renderTable = (users) => {
         let roleClass = '';
         
         // Normaliza para minúsculo para evitar erros de digitação
-        const role = (user.role || 'operador').toLowerCase();
+        const role = (user.role ||'suporte'||'admin'||'implantacao').toLowerCase();
 
-        if (role === 'ti' || role === 'master') {
+        if (role === 'admin' || role === 'master') {
             // Master/TI: Roxo (Exclusivo)
             roleClass = 'bg-purple-100 text-purple-800 border border-purple-200';
-        } else if (role === 'admin') {
-            // Admin: Azul
-            roleClass = 'bg-blue-100 text-blue-800 border border-blue-200';
         } else {
             // Operador/Outros: Cinza (Normal)
             roleClass = 'bg-gray-100 text-gray-800 border border-gray-200';

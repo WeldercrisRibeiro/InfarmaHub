@@ -7,6 +7,14 @@
  * cada role tem suas próprias permissões específicas.
  */
 
+const nomesAmigaveisRoles = {
+  suporte: "Suporte N1",
+  suporteN2: "Suporte N2",
+  implantacao: "Implantação",
+  admin: "Admin",
+};
+
+
 // Define as permissões específicas de cada role
 const permissoesPorRole = {
   suporte: {
@@ -21,7 +29,7 @@ const permissoesPorRole = {
     ],
   },
 
-    suporteN2: {
+  suporteN2: {
     roles: ["suporteN2"],
     permissoes: [
       "ver-docs",
@@ -36,7 +44,7 @@ const permissoesPorRole = {
     ],
   },
 
-  implantacao: {
+  implantaçao: {
     roles: ["implantacao"],
     permissoes: [
       "ver-docs",
@@ -46,7 +54,6 @@ const permissoesPorRole = {
       "ver-implantacao",
       "ver-conteudos",
       "ver-faq",
-      
     ],
   },
   admin: {
@@ -102,18 +109,36 @@ export function temPermissao(permissao) {
 
 /**
  * Verifica se o usuário tem acesso a um módulo específico
- * Mantém compatibilidade com os atributos data-allowed-roles antigos
+ * Aceita roles ou permissões
  * @param {array|string} cargosPermitidos - Cargos ou permissões permitidas
  * @returns {boolean}
  */
 export function verificarPermissao(cargosPermitidos) {
   const roleUsuario = sessionStorage.getItem("role") || "suporte";
 
-  // Se for array, converte para verificar permissões
+  console.log(
+    "🔐 verificarPermissao - Role:",
+    roleUsuario,
+    "| Permitidos:",
+    cargosPermitidos
+  );
+
+  // Se for array, verifica se o role está na lista OU se tem a permissão
   if (Array.isArray(cargosPermitidos)) {
-    const temAcesso = cargosPermitidos.some(
-      (cargo) => temPermissao(`ver-${cargo}`) || temPermissao(cargo)
-    );
+    const temAcesso = cargosPermitidos.some((cargo) => {
+      // Primeiro verifica se é um role exato
+      if (cargo === roleUsuario) {
+        console.log(`  ✅ Role match: ${cargo} === ${roleUsuario}`);
+        return true;
+      }
+
+      // Se não é role, tenta verificar como permissão
+      const temPerm = temPermissao(`ver-${cargo}`) || temPermissao(cargo);
+      console.log(
+        `  ${temPerm ? "✅" : "❌"} Permissão: ver-${cargo} → ${temPerm}`
+      );
+      return temPerm;
+    });
 
     if (!temAcesso) {
       alert("Acesso Negado: Você não tem permissão suficiente.");
@@ -123,8 +148,9 @@ export function verificarPermissao(cargosPermitidos) {
     return true;
   }
 
-  // Se for string, usa a verificação de permissão
+  // Se for string, verifica role ou permissão
   if (
+    cargosPermitidos === roleUsuario ||
     temPermissao(`ver-${cargosPermitidos}`) ||
     temPermissao(cargosPermitidos)
   ) {
@@ -143,29 +169,50 @@ export function configurarInterface() {
   const roleUsuario = sessionStorage.getItem("role") || "suporte";
   const roleDef = permissoesPorRole[roleUsuario];
 
+  console.log("🔍 configurarInterface - Role do usuário:", roleUsuario);
+
   if (!roleDef) {
+    console.warn("⚠️ Role não encontrado:", roleUsuario);
     return;
   }
 
   const elementosRestritos = document.querySelectorAll("[data-allowed-roles]");
+  console.log(
+    "📊 Elementos com restrição encontrados:",
+    elementosRestritos.length
+  );
 
-  elementosRestritos.forEach((el) => {
+  elementosRestritos.forEach((el, index) => {
     const cargosString = el.getAttribute("data-allowed-roles");
     const cargosPermitidos = cargosString.split(",").map((c) => c.trim());
 
+    console.log(
+      `Botão ${index}:`,
+      el.textContent.trim(),
+      "| Roles permitidos:",
+      cargosPermitidos
+    );
+
     // Verifica se o usuário tem acesso através de permissões
-    // Por exemplo, se data-allowed-roles="admin" e o usuário é admin, ele vê
-    // Ou se data-allowed-roles="suporte" e o usuário tem permissão "ver-suporte", ele vê
     const temAcesso = cargosPermitidos.some((cargo) => {
       // Se o role é exatamente igual, tem acesso
       if (cargo === roleUsuario) {
+        console.log(`  ✅ ${cargo} === ${roleUsuario} → ACESSO`);
         return true;
       }
 
       // Se não é um role direto, tenta verificar como permissão
-      // Exemplo: data-allowed-roles="docs" → verifica permissão "ver-docs"
-      return temPermissao(`ver-${cargo}`) || temPermissao(cargo);
+      const temPermissaoVerificada =
+        temPermissao(`ver-${cargo}`) || temPermissao(cargo);
+      console.log(
+        `  ${
+          temPermissaoVerificada ? "✅" : "❌"
+        } Verificando permissão: ver-${cargo} ou ${cargo} → ${temPermissaoVerificada}`
+      );
+      return temPermissaoVerificada;
     });
+
+    console.log(`  Resultado: ${temAcesso ? "MOSTRAR" : "ESCONDER"}`);
 
     if (!temAcesso) {
       el.style.display = "none"; // Esconde o botão
