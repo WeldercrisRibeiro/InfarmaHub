@@ -14,7 +14,6 @@ const nomesAmigaveisRoles = {
   admin: "Admin",
 };
 
-
 // Define as permissões específicas de cada role
 const permissoesPorRole = {
   suporte: {
@@ -44,7 +43,7 @@ const permissoesPorRole = {
     ],
   },
 
-  implantaçao: {
+  implantacao: {
     roles: ["implantacao"],
     permissoes: [
       "ver-docs",
@@ -218,4 +217,35 @@ export function configurarInterface() {
       el.style.display = "none"; // Esconde o botão
     }
   });
+
+  // Atualiza elementos que exibem o role em formato amigável
+  try {
+    const friendly = getNomeAmigavelRoleFromSession();
+    const roleEls = document.querySelectorAll(
+      "[data-role-display], #userRoleDisplay"
+    );
+    roleEls.forEach((el) => (el.textContent = friendly));
+  } catch (err) {
+    // getNomeAmigavelRoleFromSession pode não estar disponível em ambientes sem módulos importados
+    // Nesse caso, apenas ignora.
+    // console.debug('Não foi possível setar nome amigável do role:', err);
+  }
+}
+
+/**
+ * Retorna o nome amigável para um role
+ * @param {string} role
+ * @returns {string}
+ */
+export function getNomeAmigavelRole(role) {
+  return nomesAmigaveisRoles[role] || role;
+}
+
+/**
+ * Retorna o nome amigável com base no role presente na sessionStorage
+ * @returns {string}
+ */
+export function getNomeAmigavelRoleFromSession() {
+  const role = sessionStorage.getItem("role") || "suporte";
+  return getNomeAmigavelRole(role);
 }
