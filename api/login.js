@@ -1,4 +1,4 @@
-// api/login.js (NOVA VERSÃO - API de Log e Telegram)
+// api/login.js  - API de Log e Telegram
 export default async function handler(req, res) {
   if (req.method !== "POST") {
     return res.status(405).json({ sucesso: false, erro: "Método não permitido" });

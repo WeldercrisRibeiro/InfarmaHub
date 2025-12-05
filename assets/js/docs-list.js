@@ -17,7 +17,7 @@ export const listaDocumentos = [
     id: "doc2502_01",
     categoria: "Documentos de Versões",
     titulo: "Versão 25.02a - Suporte",
-    tipo: "pdf", // <--- DEFINE COMO MARKDOWN
+    tipo: "pdf", 
     pasta: "25.02/25.02a",
     arquivo: "versoes/25.02/25.02a/pdfs/25.02a_Suporte.pdf",
     //descricao: 'Como dar entrada via XML.'
@@ -27,7 +27,7 @@ export const listaDocumentos = [
     id: "doc2502_02",
     categoria: "Documentos de Versões",
     titulo: "Versão 25.02a - Clientes",
-    tipo: "pdf", // <--- DEFINE COMO MARKDOWN
+    tipo: "pdf", 
     pasta: "25.02/25.02a",
     arquivo: "versoes/25.02/25.02a/pdfs/25.02a_Clientes.pdf",
     //descricao: 'Como dar entrada via XML.'
@@ -37,7 +37,7 @@ export const listaDocumentos = [
     id: "doc2502_03",
     categoria: "Documentos de Versões",
     titulo: "Leia-Me - SUPORTE",
-    tipo: "pdf", // <--- DEFINE COMO MARKDOWN
+    tipo: "pdf", 
     pasta: "25.02/25.02a",
     arquivo: "versoes/25.02/25.02a/pdfs/Leia-Me - SUPORTE.pdf",
     //descricao: 'Como dar entrada via XML.'
@@ -47,7 +47,7 @@ export const listaDocumentos = [
     id: "doc2502_04",
     categoria: "Documentos de Versões",
     titulo: "Anexo I - Balanço de Itens de controle especial e antimicrobianos",
-    tipo: "pdf", // <--- DEFINE COMO MARKDOWN
+    tipo: "pdf", 
     pasta: "25.02/25.02a",
     arquivo: "versoes/25.02/25.02a/pdfs/Anexo I - Balanço de Itens de controle especial e antimicrobianos.pdf",
     //descricao: 'Como dar entrada via XML.'
@@ -57,7 +57,7 @@ export const listaDocumentos = [
     id: "doc2502_05",
     categoria: "Documentos de Versões",
     titulo: "Anexo II - Conciliação de cartões - Boa Vista_Atualização v.2502",
-    tipo: "pdf", // <--- DEFINE COMO MARKDOWN
+    tipo: "pdf", 
     pasta: "25.02/25.02a",
     arquivo: "versoes/25.02/25.02a/pdfs/Anexo II - Conciliação de cartões - Boa Vista_Atualização v.2502.pdf",
     //descricao: 'Como dar entrada via XML.' Anexo III - Nova estrutura do cadastro de Endereços.pdf
@@ -67,7 +67,7 @@ export const listaDocumentos = [
     id: "doc2502_06",
     categoria: "Documentos de Versões",
     titulo: "Anexo III - Nova estrutura do cadastro de Endereços",
-    tipo: "pdf", // <--- DEFINE COMO MARKDOWN
+    tipo: "pdf", 
     pasta: "25.02/25.02a",
     arquivo: "versoes/25.02/25.02a/pdfs/Anexo III - Nova estrutura do cadastro de Endereços.pdf",
     //descricao: 'Como dar entrada via XML.' Anexo III - Nova estrutura do cadastro de Endereços.pdf
@@ -79,7 +79,7 @@ export const listaDocumentos = [
     id: "doc2503_01",
     categoria: "Documentos de Versões",
     titulo: "Versão 25.03a - Suporte",
-    tipo: "pdf", // <--- DEFINE COMO MARKDOWN
+    tipo: "pdf", 
     pasta: "25.03/25.03a",
     arquivo: "versoes/25.03/25.03a/pdfs/25.03a_Suporte.pdf",
     //descricao: 'Como dar entrada via XML.'
@@ -89,7 +89,7 @@ export const listaDocumentos = [
     id: "doc2503_02",
     categoria: "Documentos de Versões",
     titulo: "Versão 25.03a - Clientes",
-    tipo: "pdf", // <--- DEFINE COMO MARKDOWN
+    tipo: "pdf", 
     pasta: "25.03/25.03a",
     arquivo: "versoes/25.03/25.03a/pdfs/25.03a_Clientes.pdf",
     //descricao: 'Como dar entrada via XML.'
@@ -100,7 +100,7 @@ export const listaDocumentos = [
     categoria: "Documentos de Versões",
     titulo:
       "Anexo I - Alteração na atualização do percentual aplicado ao preço de venda - Marketplace",
-    tipo: "pdf", // <--- DEFINE COMO MARKDOWN
+    tipo: "pdf", 
     pasta: "25.03/25.03a",
     arquivo:
       "versoes/25.03/25.03a/Anexo I - Alteração na atualização do percentual aplicado ao preço de venda - Marketplace.pdf",
@@ -112,7 +112,7 @@ export const listaDocumentos = [
     categoria: "Documentos de Versões",
     titulo:
       "Anexo II - Importação e utilização dos dados cadastrais de produtos da ABCFarma",
-    tipo: "pdf", // <--- DEFINE COMO MARKDOWN
+    tipo: "pdf", 
     pasta: "25.03/25.03a",
     arquivo:
       "versoes/25.03/25.03a/Anexo II - Importação e utilização dos dados cadastrais de produtos da ABCFarma.pdf",
@@ -129,7 +129,7 @@ export const listaDocumentos = [
     id: "est_01",
     categoria: "Módulo Estoque",
     titulo: "Entrada de Nota Fiscal",
-    tipo: "md", // <--- DEFINE COMO MARKDOWN
+    tipo: "md", 
     arquivo: "estoque/manual_entradaNFe.md",
     descricao: "Como dar entrada via XML.",
   },

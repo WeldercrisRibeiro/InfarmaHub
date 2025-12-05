@@ -1,11 +1,5 @@
 // assets/js/auth.js
 
-/**
- * Sistema de Controle de Acesso Granular (Baseado em Permissões)
- *
- * Em vez de hierarquia linear (nível 1 < nível 2 < nível 3),
- * cada role tem suas próprias permissões específicas.
- */
 
 const nomesAmigaveisRoles = {
   suporte: "Suporte N1",
@@ -226,9 +220,7 @@ export function configurarInterface() {
     );
     roleEls.forEach((el) => (el.textContent = friendly));
   } catch (err) {
-    // getNomeAmigavelRoleFromSession pode não estar disponível em ambientes sem módulos importados
-    // Nesse caso, apenas ignora.
-    // console.debug('Não foi possível setar nome amigável do role:', err);
+    console.error("Erro ao atualizar exibição do role:", err);
   }
 }
 

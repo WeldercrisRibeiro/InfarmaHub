@@ -138,7 +138,6 @@ window.handleEdit = async (id) => {
   inputService.value = data.service || "";
   inputVarejo.value = data.versaoVarejo || "";
 
-  // --- CORREÇÃO AQUI ---
   inputObservation.value = data.observacao || ""; // Mudei para data.observacao
 
   dataEditId = data.id;
@@ -165,7 +164,6 @@ const renderTable = (data) => {
     row.className =
       "border-b border-gray-100 hover:bg-gray-50 transition-colors text-sm text-gray-700";
 
-    // --- CORREÇÃO AQUI TAMBÉM ---
     // Usando client.observacao
     row.innerHTML = `
             <td class="px-6 py-4 font-medium text-gray-900">${client.name}</td>

@@ -149,9 +149,18 @@ export function preencherListaVersoes() {
     });
 }
 
-// versoes.js (Adicione isso ao código existente)
+export const nomesAmigaveiSync = {
+	"9.30c": "9.30c - 25.02a",
+	"9.30e": "9.30e - 25.02e",
+	"9.30f": "9.30f - 25.02f",
+	"9.31a": "9.31a - 25.03a",
+
+};
+
 
 export const versoesSync = [
-    "9.31a",
-    // Adicione futuras versões aqui, ex: "9.32a"
+    "9.30c",
+	"9.30e",
+	"9.30f",
+	"9.31a"
 ];
