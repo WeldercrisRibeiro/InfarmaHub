@@ -119,6 +119,26 @@ export const listaDocumentos = [
     //descricao: 'Como dar entrada via XML.'
   },
 
+    //25.04
+  {
+    id: "doc2504_01",
+    categoria: "Documentos de Versões",
+    titulo: "Versão 25.04a - Suporte",
+    tipo: "pdf", 
+    pasta: "25.04/25.04a",
+    arquivo: "versoes/25.04/25.04a/pdfs/25.04a_Suporte.pdf",
+    //descricao: 'Como dar entrada via XML.'
+  },
+
+  {
+    id: "doc2504_02",
+    categoria: "Documentos de Versões",
+    titulo: "Versão 25.04a - Clientes",
+    tipo: "pdf", 
+    pasta: "25.04/25.04a",
+    arquivo: "versoes/25.04/25.04a/pdfs/25.04a_Clientes.pdf",
+    //descricao: 'Como dar entrada via XML.'
+  },
 
 
 
