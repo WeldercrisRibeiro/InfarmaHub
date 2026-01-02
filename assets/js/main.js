@@ -154,7 +154,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
   const mensagens = [
-        'Nova versão 25.03 disponível para download!',
+        'Nova versão 25.04 disponível para download!',
         
     ];
 

@@ -112,7 +112,7 @@
 	"2502fe": ["VmdTrm.CAB","VmdPdv.CAB"],
 	"2503a":  ["VmdRrd.CAB", "VmdTrm.CAB", "VmdPdv.CAB","VmdImp.CAB","VmdRljImp.CAB","VmdSrv.CAB"],
 	"2503aa":  ["VmdRrd.CAB", "VmdTrm.CAB", "VmdPdv.CAB"],
-	
+	"2504a":  ["VmdRrd.CAB", "VmdTrm.CAB", "VmdPdv.CAB","VmdImp.CAB","VmdRljImp.CAB","VmdSrv.CAB"],
  };
 
 export const nomesAmigaveis = {
@@ -154,6 +154,7 @@ export const nomesAmigaveiSync = {
 	"9.30e": "9.30e - 25.02e",
 	"9.30f": "9.30f - 25.02f",
 	"9.31a": "9.31a - 25.03a",
+	"9.32a": "9.31a - 25.04a",
 
 };
 
