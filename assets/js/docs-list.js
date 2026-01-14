@@ -2,14 +2,13 @@
 
 export const listaDocumentos = [
   // --- GERAL ---
-  //  {
-  //      id: 'geral_01',
-  //      categoria: 'Geral',
-  //      titulo: 'Perguntas Frequentes',
-  //      arquivo: 'faq.html', // Arquivo na raiz do docs
-  //      pasta: "faq",
-  //      arquivo: "faq/faq.html",
-  //  },
+    {
+        id: 'geral_01',
+        categoria: 'Geral',
+       titulo: 'Tributária - Reforma Tributária Infarma Sistemas',
+        arquivo: 'https://github.com/WeldercrisRibeiro/Infarma-Manuais/releases/download/v1/Anexo.I.-.Reforma.Tributaria.-.Infarma.Sistemas.pdf', // Arquivo na raiz do docs
+        pasta: "faq"
+    },
   // --- DOCS VERSÃO ---
 
   //25.02
@@ -172,7 +171,7 @@ export const listaDocumentos = [
     tipo: "pdf",
     //arquivo: 'financeiro/pdfs/tesouraria_cadastro_basico.pdf',
     arquivo:
-      "https://mega.nz/file/frZ22aCJ#Z2hcBHfLwA8cS9PtWMFG8vtqJgOJrMQmp3Ke6w9d-PY",
+      "https://infarmacombr-my.sharepoint.com/:b:/g/personal/weldercris_ribeiro_infarma_com_br/IQC9bfWzPqX6QYVdYhUVmg5SAXG1m8I70S2NFNhKxmeCaEQ?e=lp0Ooj",
     //descricao: 'Regras de descontos e prazos.'
   },
 

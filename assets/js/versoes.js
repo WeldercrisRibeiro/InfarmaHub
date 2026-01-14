@@ -114,6 +114,7 @@
 	"2503a":  ["VmdRrd.CAB", "VmdTrm.CAB", "VmdPdv.CAB","VmdImp.CAB","VmdRljImp.CAB","VmdSrv.CAB"],
 	"2503aa":  ["VmdRrd.CAB", "VmdTrm.CAB", "VmdPdv.CAB"],
 	"2504a":  ["VmdRrd.CAB", "VmdTrm.CAB", "VmdPdv.CAB","VmdImp.CAB","VmdRljImp.CAB","VmdSrv.CAB"],
+	"2504b":  ["VmdRrd.CAB", "VmdTrm.CAB", "VmdPdv.CAB","VmdImp.CAB","VmdRljImp.CAB","VmdSrv.CAB"],
  };
 
 export const nomesAmigaveis = {
