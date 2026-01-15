@@ -1,5 +1,6 @@
 import { versoes, nomesAmigaveis, preencherListaVersoes } from "./versoes.js";
 import { APP_VERSION } from "./config.js";
+import { inicializarAvisos } from "./avisos.js";
 
 // Bloqueia acesso se não estiver logado
 if (sessionStorage.getItem("loggedIn") !== "true") {
@@ -148,40 +149,14 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   const footerEl = document.getElementById("versionFooter");
-    if (footerEl) {
-        const anoAtual = new Date().getFullYear();
-        footerEl.innerHTML = `© ${anoAtual} Weldercris Ribeiro. Versão ${APP_VERSION}`;
-    }
+  if (footerEl) {
+    const anoAtual = new Date().getFullYear();
+    footerEl.innerHTML = `© ${anoAtual} Weldercris Ribeiro. Versão ${APP_VERSION}`;
+  }
 
-  const mensagens = [
-        'Nova versão 25.04 disponível para download!',
-        
-    ];
-
-    let indiceAtual = 0;
-    const elemento = document.getElementById("barraAvisos");
-
-    if (elemento) {
-        elemento.innerHTML = mensagens[0];
-        setInterval(() => {
-            // A. Primeiro deixa invisível (Fade Out)
-            elemento.classList.remove("opacity-100");
-            elemento.classList.add("opacity-0");
-
-            // B. Espera 500ms (tempo da transição) para trocar o texto
-            setTimeout(() => {
-                indiceAtual = (indiceAtual + 1) % mensagens.length; // Avança para o próximo ou volta ao zero
-                elemento.innerHTML = mensagens[indiceAtual]; // Troca o texto
-
-                // C. Deixa visível novamente (Fade In)
-                elemento.classList.remove("opacity-0");
-                elemento.classList.add("opacity-100");
-            }, 500); 
-
-        }, 5000); // Troca a cada 5000 milissegundos (5 segundos)
-    }
+  // Inicializa avisos globais
+  inicializarAvisos();
 });
-
 
 window.iniciarDownload = iniciarDownload;
 window.sair = sair;

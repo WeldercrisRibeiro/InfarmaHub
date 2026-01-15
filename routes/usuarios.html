@@ -1,160 +1,289 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Configurações de Usuários - Infarma HUB</title>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-    <link rel="shortcut icon" type="image/png" href="https://www.infarma.com.br/wp-content/themes/infarmasitev2/assets/img/2023/favicon_white.png" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-    
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="shortcut icon"
+      type="image/png"
+      href="https://www.infarma.com.br/wp-content/themes/infarmasitev2/assets/img/2023/favicon_white.png"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
     <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: { inter: ['Inter', 'sans-serif'] },
-                    colors: { primary: '#003973', infarmaBlue: '#003973', infarmaRed: '#DC2626' }
-                }
-            }
-        }
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: { inter: ["Inter", "sans-serif"] },
+            colors: {
+              primary: "#003973",
+              infarmaBlue: "#003973",
+              infarmaRed: "#DC2626",
+            },
+          },
+        },
+      };
     </script>
 
     <style>
-        body { background-image: linear-gradient(to bottom right, #0f345c, #0096b1, #0f345c); }
-        .modal { display: none; }
-        .modal.open { display: flex; }
-        .table-container { 
-            max-height: calc(100vh - 300px); 
-            overflow-y: auto; 
-        }
-        .table-container::-webkit-scrollbar { width: 8px; height: 8px; }
-        .table-container::-webkit-scrollbar-track { background: #f1f1f1; border-radius: 4px; }
-        .table-container::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
-        
-        .table-container thead { 
-            position: sticky; 
-            top: 0; 
-            background-color: #f9fafb; 
-            z-index: 10;
-        }
+      body {
+        background-image: linear-gradient(
+          to bottom right,
+          #0f345c,
+          #0096b1,
+          #0f345c
+        );
+      }
+      .modal {
+        display: none;
+      }
+      .modal.open {
+        display: flex;
+      }
+      .table-container {
+        max-height: calc(100vh - 300px);
+        overflow-y: auto;
+      }
+      .table-container::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+      }
+      .table-container::-webkit-scrollbar-track {
+        background: #f1f1f1;
+        border-radius: 4px;
+      }
+      .table-container::-webkit-scrollbar-thumb {
+        background: #cbd5e1;
+        border-radius: 4px;
+      }
+
+      .table-container thead {
+        position: sticky;
+        top: 0;
+        background-color: #f9fafb;
+        z-index: 10;
+      }
     </style>
-</head>
+  </head>
 
-<body class="min-h-screen flex flex-col items-center justify-start font-inter pt-10 px-4">
-
+  <body
+    class="min-h-screen flex flex-col items-center justify-start font-inter pt-10 px-4"
+  >
     <div class="bg-white p-6 md:p-10 rounded-2xl shadow-2xl w-full max-w-5xl">
-        
-        <div class="flex items-center justify-between mb-8 border-b border-gray-100 pb-4">
-            <div class="flex items-center">
-                <img src="https://www.infarma.com.br/wp-content/themes/infarmasitev2/assets/img/2023/favicon.png" alt="Logo Infarma" class="w-12 h-12 mr-3" />
-                <div>
-                    <h2 class="text-2xl font-bold text-gray-800 tracking-tight">Gerenciar Usuários</h2>
-                    <p class="text-sm text-gray-500 font-medium">Controle de Acesso e Permissões</p>
-                </div>
-            </div>
-            
-            <a href="menu.html" class="flex items-center text-gray-500 hover:text-primary transition-colors font-semibold px-4 py-2 rounded-lg hover:bg-gray-50">
-                <i class="fa-solid fa-arrow-left mr-2"></i> Voltar ao Menu
-            </a>
+      <div
+        class="flex items-center justify-between mb-8 border-b border-gray-100 pb-4"
+      >
+        <div class="flex items-center">
+          <img
+            src="https://www.infarma.com.br/wp-content/themes/infarmasitev2/assets/img/2023/favicon.png"
+            alt="Logo Infarma"
+            class="w-12 h-12 mr-3"
+          />
+          <div>
+            <h2 class="text-2xl font-bold text-gray-800 tracking-tight">
+              Gerenciar Usuários
+            </h2>
+            <p class="text-sm text-gray-500 font-medium">
+              Controle de Acesso e Permissões
+            </p>
+          </div>
         </div>
 
-        <button id="newUserBtn" class="bg-primary text-white px-6 py-3 rounded-lg hover:bg-blue-900 transition-colors font-semibold mb-6 shadow-md flex items-center">
-            <i class="fas fa-user-plus mr-2"></i> NOVO USUÁRIO
-        </button>
+        <a
+          href="menu.html"
+          class="flex items-center text-gray-500 hover:text-primary transition-colors font-semibold px-4 py-2 rounded-lg hover:bg-gray-50"
+        >
+          <i class="fa-solid fa-arrow-left mr-2"></i> Voltar ao Menu
+        </a>
+      </div>
 
-        <div class="table-container shadow-sm rounded-lg overflow-x-auto border border-gray-200">
-            <table class="min-w-full divide-y divide-gray-200">
-                <thead class="bg-gray-50">
-                    <tr>
-                        <th class="px-6 py-4 text-left text-xs font-bold text-gray-500 uppercase tracking-wider">Nome</th>
-                        <th class="px-6 py-4 text-left text-xs font-bold text-gray-500 uppercase tracking-wider">Usuário</th>
-                        <th class="px-6 py-4 text-left text-xs font-bold text-gray-500 uppercase tracking-wider">Função</th>
-                        <th class="px-6 py-4 text-left text-xs font-bold text-gray-500 uppercase tracking-wider">Senha</th>
-                        <th class="px-6 py-4 text-center text-xs font-bold text-gray-500 uppercase tracking-wider">Ações</th>
-                    </tr>
-                </thead>
-                <tbody id="usersBody" class="bg-white divide-y divide-gray-100 text-sm">
-                    </tbody>
-            </table>
-        </div>
+      <button
+        id="newUserBtn"
+        class="bg-primary text-white px-6 py-3 rounded-lg hover:bg-blue-900 transition-colors font-semibold mb-6 shadow-md flex items-center"
+      >
+        <i class="fas fa-user-plus mr-2"></i> NOVO USUÁRIO
+      </button>
 
-        <footer class="text-xs text-gray-400 mt-6 text-center border-t border-gray-100 pt-4">
-            <p id="versionFooter">Carregando versão...</p>
-        </footer>
+      <div
+        class="table-container shadow-sm rounded-lg overflow-x-auto border border-gray-200"
+      >
+        <table class="min-w-full divide-y divide-gray-200">
+          <thead class="bg-gray-50">
+            <tr>
+              <th
+                class="px-6 py-4 text-left text-xs font-bold text-gray-500 uppercase tracking-wider"
+              >
+                Nome
+              </th>
+              <th
+                class="px-6 py-4 text-left text-xs font-bold text-gray-500 uppercase tracking-wider"
+              >
+                Usuário
+              </th>
+              <th
+                class="px-6 py-4 text-left text-xs font-bold text-gray-500 uppercase tracking-wider"
+              >
+                Função
+              </th>
+              <th
+                class="px-6 py-4 text-left text-xs font-bold text-gray-500 uppercase tracking-wider"
+              >
+                Senha
+              </th>
+              <th
+                class="px-6 py-4 text-center text-xs font-bold text-gray-500 uppercase tracking-wider"
+              >
+                Ações
+              </th>
+            </tr>
+          </thead>
+          <tbody
+            id="usersBody"
+            class="bg-white divide-y divide-gray-100 text-sm"
+          ></tbody>
+        </table>
+      </div>
 
+      <footer
+        class="text-xs text-gray-400 mt-6 text-center border-t border-gray-100 pt-4"
+      >
+        <p id="versionFooter">Carregando versão...</p>
+      </footer>
     </div>
 
-    <div id="userModal" class="modal fixed inset-0 z-50 bg-black bg-opacity-60 items-center justify-center backdrop-blur-sm">
-        <div class="bg-white rounded-xl shadow-2xl w-full max-w-md mx-4 transform transition-all overflow-hidden">
-            <div class="bg-primary px-6 py-4 border-b border-blue-900">
-                <h3 class="text-lg font-bold text-white flex items-center" id="modalTitle">
-                   <i class="fa-solid fa-user-pen mr-2"></i> Novo Usuário
-                </h3>
-            </div>
-            
-            <form id="userForm" class="p-6">
-                <div class="space-y-4">
-                    <div>
-                        <label class="block text-sm font-semibold text-gray-700 mb-1">Nome Completo</label>
-                        <input type="text" id="inputNome" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary outline-none transition-all" placeholder="Nome completo" />
-                    </div>
-
-                    <div>
-                        <label class="block text-sm font-semibold text-gray-700 mb-1">Usuário de Acesso</label>
-                        <input type="text" id="inputUsuario" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary outline-none transition-all" placeholder="Usuário" />
-                    </div>
-
-                    <div>
-                        <label class="block text-sm font-semibold text-gray-700 mb-1">Senha</label>
-                        <input type="text" id="inputSenha" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary outline-none transition-all" placeholder="Senha" />
-                    </div>
-
-                    <div>
-                        <label class="block text-sm font-semibold text-gray-700 mb-1">Função</label>
-                        <div class="relative">
-                            <select id="inputRole" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary outline-none transition-all bg-white appearance-none">
-                                <option value="suporte">Suporte</option>
-                                <option value="implantacao">Implantação</option>
-                                <option value="admin">Admin</option>
-
-                                
-                            </select>
-                            <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
-                                <i class="fas fa-chevron-down text-xs mr-2"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="mt-8 flex justify-end space-x-3 pt-4 border-t border-gray-100">
-                    <button type="button" id="closeModalBtn" class="px-4 py-2 rounded-lg text-gray-600 hover:bg-gray-100 font-medium transition-colors">Cancelar</button>
-                    <button type="submit" class="bg-primary text-white px-5 py-2 rounded-lg hover:bg-blue-800 font-semibold shadow-md transition-all">Salvar</button>
-                </div>
-            </form>
+    <div
+      id="userModal"
+      class="modal fixed inset-0 z-50 bg-black bg-opacity-60 items-center justify-center backdrop-blur-sm"
+    >
+      <div
+        class="bg-white rounded-xl shadow-2xl w-full max-w-md mx-4 transform transition-all overflow-hidden"
+      >
+        <div class="bg-primary px-6 py-4 border-b border-blue-900">
+          <h3
+            class="text-lg font-bold text-white flex items-center"
+            id="modalTitle"
+          >
+            <i class="fa-solid fa-user-pen mr-2"></i> Novo Usuário
+          </h3>
         </div>
+
+        <form id="userForm" class="p-6">
+          <div class="space-y-4">
+            <div>
+              <label class="block text-sm font-semibold text-gray-700 mb-1"
+                >Nome Completo</label
+              >
+              <input
+                type="text"
+                id="inputNome"
+                required
+                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary outline-none transition-all"
+                placeholder="Nome completo"
+              />
+            </div>
+
+            <div>
+              <label class="block text-sm font-semibold text-gray-700 mb-1"
+                >Usuário de Acesso</label
+              >
+              <input
+                type="text"
+                id="inputUsuario"
+                required
+                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary outline-none transition-all"
+                placeholder="Usuário"
+              />
+            </div>
+
+            <div>
+              <label class="block text-sm font-semibold text-gray-700 mb-1"
+                >Senha</label
+              >
+              <input
+                type="text"
+                id="inputSenha"
+                required
+                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary outline-none transition-all"
+                placeholder="Senha"
+              />
+            </div>
+
+            <div>
+              <label class="block text-sm font-semibold text-gray-700 mb-1"
+                >Função</label
+              >
+              <div class="relative">
+                <select
+                  id="inputRole"
+                  required
+                  class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary outline-none transition-all bg-white appearance-none"
+                >
+                  <option value="suporte">Suporte</option>
+                  <option value="implantacao">Implantação</option>
+                  <option value="admin">Admin</option>
+                </select>
+                <div
+                  class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700"
+                >
+                  <i class="fas fa-chevron-down text-xs mr-2"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="mt-8 flex justify-end space-x-3 pt-4 border-t border-gray-100"
+          >
+            <button
+              type="button"
+              id="closeModalBtn"
+              class="px-4 py-2 rounded-lg text-gray-600 hover:bg-gray-100 font-medium transition-colors"
+            >
+              Cancelar
+            </button>
+            <button
+              type="submit"
+              class="bg-primary text-white px-5 py-2 rounded-lg hover:bg-blue-800 font-semibold shadow-md transition-all"
+            >
+              Salvar
+            </button>
+          </div>
+        </form>
+      </div>
     </div>
 
     <script type="module">
-        import { verificarPermissao } from "../assets/js/auth.js";
-        import { APP_VERSION } from "../assets/js/config.js";
+      import { verificarPermissao } from "../assets/js/auth.js";
+      import { APP_VERSION } from "../assets/js/config.js";
 
-        document.addEventListener('DOMContentLoaded', () => {
-            // 1. Permissão
-            verificarPermissao(['admin']);
+      document.addEventListener("DOMContentLoaded", () => {
+        // 1. Permissão
+        verificarPermissao(["admin"]);
 
-            // 2. Versão
-            const footerEl = document.getElementById("versionFooter");
-            if (footerEl) {
-                const ano = new Date().getFullYear();
-                footerEl.innerHTML = `© ${ano} Weldercris Ribeiro. Versão ${APP_VERSION || "..."}`;
-            }
-        });
+        // 2. Versão
+        const footerEl = document.getElementById("versionFooter");
+        if (footerEl) {
+          const ano = new Date().getFullYear();
+          footerEl.innerHTML = `© ${ano} Weldercris Ribeiro. Versão ${
+            APP_VERSION || "..."
+          }`;
+        }
+      });
     </script>
-    
-    <script type="module" src="../assets/js/usuarios.js"></script> 
-</body>
+
+    <script type="module" src="../assets/js/usuarios.js"></script>
+    <script type="module" src="../assets/js/avisos.js"></script>
+  </body>
 </html>
