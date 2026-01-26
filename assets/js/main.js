@@ -1,6 +1,6 @@
 import { versoes, nomesAmigaveis, preencherListaVersoes } from "./versoes.js";
 import { APP_VERSION } from "./config.js";
-import { inicializarAvisos } from "./avisos.js";
+//import { inicializarAvisos } from "./avisos.js";
 
 // Bloqueia acesso se não estiver logado
 if (sessionStorage.getItem("loggedIn") !== "true") {
@@ -155,7 +155,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // Inicializa avisos globais
-  inicializarAvisos();
+  //inicializarAvisos();
 });
 
 window.iniciarDownload = iniciarDownload;
